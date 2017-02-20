@@ -35,6 +35,27 @@ public class Helper {
 	}
 	
 	/**
+	 * Method provjerava unos long broja i ako je u redu vraca ga
+	 * @return
+	 */
+	public long checkLongInput() {
+		
+		long n = 0;
+		boolean isCorrect = false;
+		
+		while(!isCorrect) {
+			try {
+				n = Long.parseLong(sc.nextLine());
+				isCorrect = true;
+			} catch (Exception e) {
+				System.out.print("Nevazeci unos, unesite ponovo: ");
+//				sc.nextLine();
+			}
+		}
+		return n;
+	}
+	
+	/**
 	 * Method provjerava unos decimalnog broja
 	 * @return
 	 */
@@ -82,6 +103,29 @@ public class Helper {
 		
 	}
 	
+	public int[] checkArrayInput(int n) {
+		
+		int[] arr = new int[n];
+		
+		boolean isCorrect = false;
+		while (!isCorrect) {
+			
+			try {
+				for (int i=0; i < arr.length; i++) {
+					arr[i] = sc.nextInt();
+				}
+				isCorrect = true;
+			} catch(InputMismatchException ime) {
+				System.out.println("Pogresan unos. "
+						+ "Jedan ili vise unosa nije cijeli broj, pokusajte ponovo");
+				sc.nextLine();
+				return new int[0];
+			}
+		}
+		return arr;
+		
+	}
+	
 	/**
 	 * Method kontrolise unos cijelih brojeva u ArrayList<Integer>
 	 * @return
@@ -106,6 +150,37 @@ public class Helper {
 		}
 		
 		return list;
+	}
+	
+	/**
+	 * Method kreira pocetno slovo svake rijeci u veliko 
+	 * @param s
+	 * @return
+	 */
+	public String makeCapitalLetters(String s) {
+		
+		String[] str = s.split(" ");
+		String s2 = "";
+		
+		for (int i=0; i < str.length; i++) {
+			s2 += makeCapital(str[i]) + " ";
+		}
+		
+		return s2;
+ 	}
+	
+	/**
+	 * Method kreira pocetno slovo veliko
+	 * @param s
+	 * @return
+	 */
+	public String makeCapital(String s) {
+		
+		StringBuilder sb = new StringBuilder(s);
+		
+		char ch = Character.toUpperCase(s.charAt(0));
+		sb.setCharAt(0, ch);
+		return sb.toString();
 	}
 	
 }
