@@ -182,6 +182,16 @@ public class Helper {
 		sb.setCharAt(0, ch);
 		return sb.toString();
 	}
+	/**
+	 * Method provjerava da li je prolijedjeni broj prost
+	 * @param n
+	 * @return
+	 */
+	public static boolean isPrime(int n) {
+		for (int i=2; i <= n/2; i++) 
+			if (n % i == 0) return false;
+		return true;
+	}
 	
 }
 
