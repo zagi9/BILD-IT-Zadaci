@@ -34,6 +34,23 @@ public class Helper {
 		return n;
 	}
 	
+	public short checkShortInput() {
+		
+		short n = 0;
+		boolean isCorrect = false;
+		
+		while(!isCorrect) {
+			try {
+				n = Short.parseShort(sc.nextLine());
+				isCorrect = true;
+			} catch (Exception e) {
+				System.out.print("Nevazeci unos, unesite ponovo: ");
+//				sc.nextLine();
+			}
+		}
+		return n;
+	}
+	
 	/**
 	 * Method provjerava unos long broja i ako je u redu vraca ga
 	 * @return
