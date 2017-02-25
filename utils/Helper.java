@@ -143,6 +143,31 @@ public class Helper {
 		
 	}
 	
+	public double[][] checkArrayInput(int row, int col) {
+		
+		double[][] arr = new double[row][col];
+		
+		boolean isCorrect = false;
+		while (!isCorrect) {
+			
+			try {
+				for (int i=0; i < arr.length; i++) {
+					for (int j=0; j < arr[i].length; j++) {
+						arr[i][j] = sc.nextDouble();
+					}
+				}
+				isCorrect = true;
+			} catch(InputMismatchException ime) {
+				System.out.println("Pogresan unos. "
+						+ "Jedan ili vise unosa nije cijeli broj, pokusajte ponovo");
+				sc.nextLine();
+				return new double[0][0];
+			}
+		}
+		return arr;
+		
+	}
+	
 	/**
 	 * Method kontrolise unos cijelih brojeva u ArrayList<Integer>
 	 * @return
