@@ -159,13 +159,36 @@ public class Helper {
 				isCorrect = true;
 			} catch(InputMismatchException ime) {
 				System.out.println("Pogresan unos. "
-						+ "Jedan ili vise unosa nije cijeli broj, pokusajte ponovo");
+						+ "Jedan ili vise unosa nije broj");
 				sc.nextLine();
 				return new double[0][0];
 			}
 		}
 		return arr;
+	}
+	
+	public int[][] checkIntMatrix(int row, int col) {
 		
+		int[][] arr = new int[row][col];
+		
+		boolean isCorrect = false;
+		while (!isCorrect) {
+			
+			try {
+				for (int i=0; i < arr.length; i++) {
+					for (int j=0; j < arr[i].length; j++) {
+						arr[i][j] = sc.nextInt();
+					}
+				}
+				isCorrect = true;
+			} catch(InputMismatchException ime) {
+				System.out.println("Pogresan unos. "
+						+ "Jedan ili vise unosa nije cijeli broj");
+				sc.nextLine();
+				return new int[0][0];
+			}
+		}
+		return arr;
 	}
 	
 	/**
