@@ -143,6 +143,28 @@ public class Helper {
 		
 	}
 	
+	public double[] checkDoubleArrayInput(int n) {
+		
+		double[] arr = new double[n];
+		
+		boolean isCorrect = false;
+		while (!isCorrect) {
+			
+			try {
+				for (int i=0; i < arr.length; i++) {
+					arr[i] = sc.nextDouble();
+				}
+				isCorrect = true;
+			} catch(Exception ime) {
+				System.out.println("Pogresan unos, pokusajte ponovo");
+				sc.nextLine();
+				return new double[0];
+			}
+		}
+		return arr;
+		
+	}
+	
 	public double[][] checkArrayInput(int row, int col) {
 		
 		double[][] arr = new double[row][col];
