@@ -239,6 +239,51 @@ public class Helper {
 		return list;
 	}
 	
+	public ArrayList<Integer> listOfIntegers(int n) {
+		
+//		Scanner sc = new Scanner(System.in);
+		
+		ArrayList<Integer> list = new ArrayList<>();
+		
+		System.out.print("Unesite " + n + " cijelih brojeva: ");
+		
+		while(list.size() < n) {
+			try {
+				list.add(sc.nextInt());
+			}catch(InputMismatchException ime) {
+				System.out.println("Pogresan unos, pokusajte ponovo: ");
+				sc.nextLine();
+			}
+		}
+//		sc.close();
+		return list;
+	}
+	
+	/**
+	 * Method vraca ArrayList<Double>, sa onoliko elmenata koliko je proslijedjeno
+	 * @param n
+	 * @return
+	 */
+	public ArrayList<Double> listOfDoubles(int n) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		ArrayList<Double> list = new ArrayList<>();
+		
+		System.out.print("Unesite " + n + " brojeva: ");
+		
+		while(list.size() < n) {
+			try {
+				list.add(sc.nextDouble());
+			}catch(InputMismatchException ime) {
+				System.out.println("Pogresan unos, pokusajte ponovo: ");
+				sc.nextLine();
+			}
+		}
+		sc.close();
+		return list;
+	}
+	
 	/**
 	 * Method kreira pocetno slovo svake rijeci u veliko 
 	 * @param s
