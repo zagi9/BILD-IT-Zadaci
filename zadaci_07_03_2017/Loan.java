@@ -1,6 +1,7 @@
 package zadaci_07_03_2017;
 
 public class Loan {
+	
 	private double annualInterestRate;
 	private int numberOfYears;
 	private double loanAmount;
@@ -20,6 +21,7 @@ public class Loan {
 		this.numberOfYears = numberOfYears;
 		this.loanAmount = loanAmount;
 		loanDate = new java.util.Date();
+		checkInput(annualInterestRate, numberOfYears, loanAmount);
 	}
 	
 	/** Return annualInterestRate */
@@ -29,6 +31,7 @@ public class Loan {
 	
 	/** Set a new annualInterestRate */
 	public void setAnnualInterestRate(double annualInterestRate) {
+		if (annualInterestRate <= 0) throw new IllegalArgumentException();
 		this.annualInterestRate = annualInterestRate;
 	}
 
@@ -39,6 +42,7 @@ public class Loan {
 	
 	/** Set a new numberOfYears */
 	public void setNumberOfYears(int numberOfYears) {
+		if (numberOfYears <= 0) throw new IllegalArgumentException();
 		this.numberOfYears = numberOfYears;
 	}
 	
@@ -49,6 +53,7 @@ public class Loan {
 	
 	/** Set a new loanAmount */
 	public void setLoanAmount(double loanAmount) {
+		if (loanAmount <= 0) throw new IllegalArgumentException();
 		this.loanAmount = loanAmount;
 	}
 	
@@ -69,6 +74,16 @@ public class Loan {
 	/** Return loan date */
 	public java.util.Date getLoanDate() {
 		return loanDate;
+	}
+	
+	private void checkInput(double annualInterestRate, int numberOfYears,
+			double loanAmount) {
+		
+		if (annualInterestRate <= 0 || numberOfYears <= 0 ||
+				loanAmount <= 0) {
+			
+			throw new IllegalArgumentException();
+		}
 	}
 	
 	public String toString() {
