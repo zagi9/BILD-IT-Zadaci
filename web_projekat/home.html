@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="cssfile.css">
+        <title>ZSguitars</title>
+        <script type="text/javascript" src="javascript/jquery-3.2.0.min.js"></script>
+        
+        <script type="text/javascript">
+        
+            $(document).ready(function(){
+                $('.nav li a').click(function(){
+                    event.preventDefault();
+                    var sectionId = $(this).attr('href');
+                    var fromTop = $(sectionId).offset().top;
+                    $('html, body').animate({
+                        scrollTop: fromTop
+                    }, 1000);
+                });
+                
+                $(window).scroll(function () {
+                    $('.section').each(function () {
+                        var fromTop = $(this).offset().top;
+                        if (window.scrollY >= (fromTop + 70)) {
+                            $(this).addClass('fixPoint');
+                        } else {
+                            $(this).removeClass('fixPoint');
+                        }
+                        console.log(fromTop);
+                    })
+                })
+            });
+        </script>
+    </head>
+    <body>
+    
+    <header id="header">
+        <div id="logo">ZSguitars</div>
+        <div id="menu">
+            <nav class="nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#oNama">O nama</a></li>
+                    <li><a href="#usluge">Usluge</a></li>
+                    <li><a href="#video">Video</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>    
+    </header>
+    <div id="wrapper">
+        <section id="home" class="section">
+            <h2>Home</h2>
+            <article>
+                <p>Vrhunske hand made elektricne gitare</p> 
+            </article>
+        </section>
+        <section id="oNama" class="section">
+            <h2>O nama</h2>
+            <article>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mollis purus in mauris vestibulum lobortis. Suspendisse ac quam eget lacus sodales commodo ultrices vitae massa. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec lectus velit, suscipit at nisl ac, cursus posuere ligula. Aenean a scelerisque libero. Integer pharetra condimentum rutrum. Suspendisse hendrerit vestibulum mauris, in pellentesque neque posuere id.</p>
+
+                <p>Nulla euismod gravida metus fringilla eleifend. Sed velit eros, tincidunt sit amet arcu eu, tristique interdum risus. Sed fermentum sapien risus, tempus auctor metus facilisis at. Integer cursus lectus leo, in porta velit pellentesque id. Ut quis ipsum non tortor viverra facilisis. In egestas augue justo, vitae faucibus risus eleifend ut. Maecenas sagittis mi vel mattis accumsan. Phasellus pulvinar lobortis felis nec euismod. Morbi pellentesque sed elit ac ultrices. In hac habitasse platea dictumst. Sed commodo hendrerit mi vitae vulputate. Aliquam Ut eget porttitor risus. Vivamus tempus, tortor in ultricies elementum, erat nunc faucibus magna, in mollis elit orci ac turpis. Fusce in velit sit amet risus auctor commodo quis sed purus. Suspendisse augue sapien, sollicitudin a elit sed, interdum luctus tellus. Proin scelerisque pulvinar pulvinar. Morbi id neque ipsum. Vestibulum vel feugiat mi. Nunc tempor mauris vel tincidunt fermentum. Nam in odio ut lectus consequat posuere. Sed non quam turpis. Fusce iaculis dui tristique, lacinia enim quis, egestas metus. Vestibulum consequat ultricies nunc id ultrices. Ut consequat ultrices condimentum. Aliquam quis feugiat metus. Ut congue nisl consectetur odio ultrices, id consectetur justo venenatis.
+                </p>
+            </article>    
+        </section>
+        <section id="usluge" class="section">
+            <h2>Usluge</h2>
+            <article>
+                <p align="justify">Suspendisse a eleifend turpis. Nullam tristique venenatis fringilla. In at enim eget enim ultricies lacinia. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non orci eros. Aenean quis nibh lacus. Pellentesque in nisl imperdiet, condimentum libero quis, varius massa. Sed nunc sapien, ultrices eget erat ultrices, molestie semper diam. Curabitur at velit scelerisque, blandit nisl a, feugiat nunc. Donec volutpat rhoncus justo, sit amet varius mi. Donec semper id massa nec congue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum convallis, lorem sed sollicitudin ultricies, ex tortor maximus sapien, non lacinia mi orci non dolor. Nam a lectus pulvinar, feugiat orci vulputate, luctus sem. Cras ut neque malesuada, condimentum enim sit amet, malesuada sem
+                </p>
+                <p>Morbi venenatis tempus turpis in iaculis. Pellentesque id lobortis nulla, ac gravida urna. Quisque interdum erat fermentum enim elementum, convallis luctus arcu dignissim. In a lacinia velit. Nunc eget dictum arcu. Morbi pulvinar condimentum dolor eu tincidunt. Ut tincidunt congue ante, et scelerisque magna cursus at. Vestibulum non ultrices metus. Duis lobortis, risus sit amet tincidunt euismod, dolor turpis vehicula felis, a ultricies dolor tortor eu libero. Proin consequat fringilla eros, pulvinar volutpat dolor cursus at. Vestibulum ipsum orci, finibus eu dictum ac, varius in ipsum. Duis pretium quam neque, eget pulvinar orci tristique sit amet. Phasellus bibendum enim sit amet lacus ullamcorper, nec euismod odio condimentum.
+                </p>
+            </article>
+        </section>
+        <section id="video" class="section">
+            <h2>Video</h2>
+            <article>
+                <ul>
+                    <li id="video1">
+                        <iframe width="320" height="200" src="https://www.youtube-nocookie.com/embed/-pgCYD_J-HY?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                        <p>Igor Paspalj, ZSguitars</p>
+                    </li>
+                    <li>
+                        <iframe width="320" height="200" src="https://www.youtube-nocookie.com/embed/jZGbjN3Ncak?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                        <p>Zsguitars, logo</p>
+                    </li>
+                    <li>
+                        <iframe width="320" height="200" src="https://www.youtube-nocookie.com/embed/wBLiaAQii2M?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                        <p>David Ponwitz, ZsGuitars</p>
+                    </li>
+                    <li>
+                        <iframe width="320" height="200" src="https://www.youtube-nocookie.com/embed/VUW5wP1ovo8?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                        <p>ZS guitars etude - presentation</p>
+                    </li>
+                </ul>
+            </article>
+        </section>
+        <section id="kontakt" class="section">
+            <h2>Kontakt</h2>
+            <article>
+                <p>Kontakt form</p>
+                <p>
+                    <form>
+                        <div class="row">
+                            <label for="Ime">Ime:</label>
+                            <input id="Ime" name="Ime" type="text">
+                        </div>
+                        <div class="row">
+                            <label for="Email">Email:</label>
+                            <input id="Email" name="Email" type="email">
+                        </div>
+                        <div class="row">
+                            <label for="Message">Poruka:</label>
+                            <textarea id="Message" name="Message" rows="5" cols="50"></textarea>
+                        </div>
+                        <div class="row">
+                            <button type="submit">Posaljte poruku</button>
+                        </div>
+                    </form>
+                </p>
+            </article>
+        </section>
+        <footer>
+            <p>copyright</p>
+        </footer>
+    </div>  
+<!--        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('.nav li a').click(function(){
+                   event.preventDefault();
+                    var sectionId = $(this).attr('href');
+                    console.log(sectionId);
+                    console.dir(event);
+                });
+                            
+            }) 
+        </script>
+-->
+    </body>
+</html>
+       
